@@ -1,0 +1,58 @@
+<header id="header"  class="animated fadeInDown" >
+
+    <div id="logo-group">
+        <span id="logo"> <img src="styles/img/logo.png" alt="SmartAdmin"> </span>
+    </div>
+
+</header>
+<div id="main" role="main"  class="animated fadeInDown" >
+
+    <div id="content" class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3">
+                <div class="well no-padding">
+                    <form ng-submit="login()" id="login-form" name="loginform" class="smart-form client-form"  data-smart-validate-form>
+                        <header>
+                            Sign In
+                        </header>
+                        <fieldset>
+                            <section>
+                                <label class="label">UserName or Email</label>
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                    <input type="text" ng-model="name" name="name"
+                                           data-smart-validate-input
+                                           data-required
+                                           data-minlength="1"
+                                           data-maxnlength="20"
+                                           data-message="Please enter your username or password">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
+                                        your email</b> </label>
+                                <div class="note">
+                                </div>
+                            </section>
+                            <section>
+                                <label class="label">Password</label>
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                   <input type="password" ng-model="password" name="password"
+                                          data-smart-validate-input
+                                          data-required
+                                          data-minlength="1"
+                                          data-maxnlength="20"
+                                          data-message="Please enter your email password">
+                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter
+                                        your password</b> </label>
+                                <div class="note">
+                                </div>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button type="submit" class="btn btn-primary">
+                                Sign in
+                            </button>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

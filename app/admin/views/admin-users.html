@@ -1,0 +1,110 @@
+<loading visible="loading"></loading>
+<div id="content">
+    <div class="text-right margin-bottom-10">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="addRow()">Add New</button>
+    </div>
+    <section widget-grid id="widget-grid">
+        <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken" data-widget-editbutton="false" data-widget-deletebutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Videos</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding">
+                            <div class="table-responsive">
+                                <table st-table="tableData" st-safe-src="safeData" st-select-mode="multiple" class="table table-bordered">
+                                    <thead>
+                                    <tr style="text-align: center;">
+                                        <th>No</th>
+                                        <th st-sort="name">UserName</th>
+                                        <th st-sort="email">Email</th>
+                                        <th st-sort="duration">Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr st-select-row="row" st-select-mode="single" ng-repeat="row in tableData" ng-dblclick="editRow(row)">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{row.name}}</td>
+                                        <td>{{row.email}}</td>
+                                        <td>{{row.first_name}} {{row.last_name}}</td>
+                                        <td class="text-center controls-td">
+                                            <a ng-click="editRow(row)">Edit</a> /
+                                            <a ng-click="deleteRow(row,$index)">Delete</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="7" class="text-center">
+                                            <div st-pagination="" st-items-by-page="10" st-displayed-pages="10"></div>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Edit Information</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">UserName</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="UserName" type="text" ng-model="currRow.name" required ng-disabled="currRow.id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Email</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="Email" type="text" ng-model="currRow.email" required ng-disabled="currRow.id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">First Name</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="First Name" type="text" ng-model="currRow.first_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="last Name" type="text" ng-model="currRow.last_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="" type="password" ng-model="currRow.password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Confirm password</label>
+                        <div class="col-md-9">
+                            <input class="form-control" placeholder="" type="password" ng-model="currRow.confirm_password" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="save()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1200px) {
+    .home-container .landing-section,
+    .about-container .about-section,
+    .news-container .news-section,
+    .contact-us-container .contact-us-section
+    .join-team-container .join-team-section {
+        padding-top: 200px;
+    }
+
+    .home-container h1 {
+        font-size: 60px;
+
+    }
+
+    .logo-img {
+        margin-top: -15px;
+        width: 50px;
+    }
+
+    .landing-section {
+        min-height: 600px;
+    }
+
+    .social-section {
+        margin: auto;
+    }
+    .landing-section h1 .span-2 {
+        background-position: -516px -167px;
+    }
+    .landing-section h1 .span-3 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        height: 250px;
+    }
+    .transformTop {
+        transform: translateY(-19rem);
+    }
+    .image-box:before {
+        height: 87.5%;
+        top: 7.9%;
+    }
+
+}

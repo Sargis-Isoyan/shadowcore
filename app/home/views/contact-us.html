@@ -1,0 +1,92 @@
+<div data-smart-include="app/home/partials/header.html" class="placeholder-header"></div>
+
+<div class="container-fluid contact-us-container padding-0" id="section1">
+    <div class="row margin-0">
+        <div class="col-xs-12 padding-0">
+            <div class="contact-us-section">
+                <h1 class="positionCenter">CONTACT US</h1>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row margin-0 text-center">-->
+        <!--<a class="arrow-wrapper cursor-pointer" href="#section2" du-smooth-scroll="" du-scrollspy="" offset="60"-->
+           <!--class="">-->
+            <!--<i class="fa fa-angle-down arrow-down"></i>-->
+        <!--</a>-->
+    <!--</div>-->
+    <div class="row margin-0 padding-top-20 padding-bottom-80" id="section2">
+        <div class="col-xs-12 text-center">
+            <div class="row">
+                <div class="contact-form-container padding-top-20 padding-bottom-20 text-center">
+                    <div class="col-lg-4 contact-ways-container">
+                        <div class="text-white contact-ways">
+                            <i class="fa fa-phone"></i>
+                            <p class="text-white">+00 79 7892 6788</p>
+                        </div>
+                        <div class="text-white contact-ways">
+                            <i class="fa fa-envelope"></i>
+                            <p class="text-white">contact@serebrumlab.com</p>
+                        </div>
+                        <div class="text-white contact-ways">
+                            <i class="fa fa-map-marker"></i>
+                            <p class="">342 Avenue Kenaston Avenue</p>
+                            <p class="">Mont-Royal, QC H3R 1M8, Canada</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h2 class="contact-form-header">Contact Form</h2>
+                        <form ng-if="isContact" ng-submit="onSend()">
+                            <div class="form-box">
+                                <div class="form-item">
+                                    <label for="form-select">Type of inquiry</label>
+                                    <select id="form-select" class="input2 text-center2" ng-model="sendData.subject" required>
+                                        <option value="General">General</option>
+                                        <option value="Support">Support</option>
+                                        <option value="Bug">Bug</option>
+                                        <option value="Business Inquiry">Business Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="form-item">
+                                    <label for="form-input1">Email</label>
+                                    <input id="form-input1" type="text" ng-model="sendData.firstname"
+                                           class="input2"
+                                           required>
+                                </div>
+                                <div class="form-item">
+                                    <label for="form-input2">First Name</label>
+                                    <input id="form-input2" type="text" ng-model="sendData.lastname"
+                                           class="input2"
+                                           required>
+                                </div>
+                                <div class="form-item">
+                                    <label for="form-input3">Last Name</label>
+                                    <input id="form-input3" type="text" ng-model="sendData.email" class="input2"
+                                           required>
+                                </div>
+                                <div class="form-textarea">
+                                    <label for="form-textarea">Message</label>
+                                    <textarea id="form-textarea" ng-model="sendData.message" class="input2" rows="5"
+                                              required></textarea>
+                                </div>
+                                <div class="form-button">
+                                    <button class="btn btn-primary btn-white-border">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div ng-if="!isContact" class="contact-us-success">
+                        <h1>Thank you! We'll be in touch.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-0">
+        <div class="col-xs-12 padding-0">
+            <div ng-include="'app/home/partials/news-letter.html'"></div>
+        </div>
+    </div>
+</div>
+
+
+<div data-smart-include="app/home/partials/footer.html" class="placeholder-header"></div>

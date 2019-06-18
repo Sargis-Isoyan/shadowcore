@@ -1,0 +1,170 @@
+@media only screen and (max-width: 960px) {
+    .home-container .landing-section,
+    .about-container .about-section,
+    .news-container .news-section,
+    .contact-us-container .contact-us-section,
+    .join-team-container .join-team-section {
+        padding-top: 150px;
+    }
+
+    .about-section h1, .news-section h1, .contact-us-section h1, .join-team-section h1 {
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+
+    .buy-section {
+        padding-top: 25px;
+    }
+
+    .buy-section h1 {
+        font-size: 40px;
+    }
+
+    .top-social-icons {
+        display: none;
+    }
+
+
+    .logo-text {
+        padding-left: 20px;
+        padding-top: 0;
+
+    }
+    .videos-wrapper {
+        /*width: calc(100% - 50px);*/
+    }
+
+    .slick-prev:before {
+        margin-left: 0;
+    }
+
+    .slick-next:before {
+        margin-left: 0;
+    }
+    .landing-section h1 .span-2 {
+        background-position: -719px -241px;
+        background-size: auto;
+    }
+    .landing-section h1 .span-3 {
+        font-size: 45px;
+    }
+    .landing-section {
+        background-size: auto;
+        background-position: center top;
+        min-height: 800px;
+    }
+    .clipped-bg {
+        padding: 1rem;
+    }
+    .home-container h1 {
+        font-size: 75px;
+        letter-spacing: 15px;
+    }
+    .sub-title {
+        font-size: 25px;
+    }
+    .sub-title-character {
+        font-size: 35px;
+    }
+    .buy-section-left {
+        width: 52%;
+        background-size: cover;
+        background-position: center right;
+    }
+    .buy-section-wrapper {
+        padding: 0;
+    }
+    .buy-section {
+        padding: 4vw 0 4vw 15px;
+    }
+    .slick-prev-label,
+    .slick-next-label {
+        display: none !important;
+    }
+    .slick-box h6{
+
+    }
+    .character-box:after {
+        height: 100%;
+        top: 0;
+        transform: none;
+    }
+
+    .slick-box {
+        width: 48%;
+    }
+    .image-box {
+        width: 50%;
+    }
+    .image-box:before {
+        height: 100%;
+        top: 0;
+    }
+    .newsletter-section {
+        padding-top: 100px;
+    }
+    .contact-ways-container {
+        display: flex;
+        align-items: flex-start;
+        padding: 15px 20px 40px;
+    }
+    .contact-ways {
+        height: 180px;
+    }
+    .contact-ways:nth-child(2) {
+        margin: 0 10px;
+    }
+    .contact-ways:not(:last-child) {
+        margin-bottom: initial;
+    }
+    .contact-ways p {
+        font-size: 15px;
+    }
+    .contact-ways:last-child p:first-of-type {
+        padding-top: 10px;
+    }
+    .contact-form-header {
+        padding: 50px 0;
+    }
+    .form-box {
+        padding: 20px 0;
+    }
+    .contact-us-section h1 {
+        font-size: 60px;
+    }
+    .about-section h1 {
+        font-size: 60px;
+    }
+    .about-list {
+        padding: 0 0 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        overflow-x: auto;
+    }
+    .about-list::-webkit-scrollbar {
+        display: none;
+    }
+    .about-item:first-child {
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+    .about-item:not(:first-child) {
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+    .about-specs {
+        margin: 0 10px;
+    }
+    .specs-container {
+        justify-content: center;
+    }
+    .news-section h1 {
+        font-size: 60px;
+    }
+    .page-scrolling-indicator {
+        display: none;
+    }
+
+}

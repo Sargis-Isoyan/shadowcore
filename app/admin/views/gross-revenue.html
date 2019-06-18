@@ -1,0 +1,88 @@
+<loading visible="loading"></loading>
+<div id="content">
+    <div class="text-right margin-bottom-10">
+        <!--button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="addRow()">Add New</button-->
+    </div>
+    <section widget-grid id="widget-grid">
+        <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken" data-widget-editbutton="false" data-widget-deletebutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Sale Daily Reports</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding">
+                            <div class="table-responsive">
+                                <table st-table="tableData" st-safe-src="safeData" st-select-mode="multiple" class="table table-bordered">
+                                    <thead>
+                                    <tr style="text-align: center;">
+                                        <th rowspan="2">No</th>
+                                        <th rowspan="2">Month</th>
+                                        <th colspan="2">Total</th>
+                                        <th colspan="2">Steam</th>
+                                        <th colspan="2">Facebook</th>
+                                        <th colspan="2">Sony</th>
+                                        <th colspan="2">Other</th>
+                                        <th rowspan="2"></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Unit</th>
+                                        <th>Amount($)</th>
+                                        <th>Unit</th>
+                                        <th>Amount($)</th>
+                                        <th>Unit</th>
+                                        <th>Amount($)</th>
+                                        <th>Unit</th>
+                                        <th>Amount($)</th>
+                                        <th>Unit</th>
+                                        <th>Amount($)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr st-select-row="row" st-select-mode="single" ng-repeat="row in tableData" ng-dblclick="editRow(row)">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{row.reg_year}}/{{row.reg_month}}</td>
+                                        <td>{{row.total_unit}}</td>
+                                        <td>{{row.total_amount}}</td>
+                                        <td>{{row.steam_unit}}</td>
+                                        <td>{{row.steam_amount}}</td>
+                                        <td>{{row.facebook_unit}}</td>
+                                        <td>{{row.facebook_amount}}</td>
+                                        <td>{{row.sony_unit}}</td>
+                                        <td>{{row.sony_amount}}</td>
+                                        <td>{{row.other_unit}}</td>
+                                        <td>{{row.other_amount}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr style="background-color: #fff8ce;">
+                                        <td colspan="2" style="text-align: center;">SUM</td>
+                                        <td>{{sum.total_unit}}</td>
+                                        <td>{{sum.total_amount}}</td>
+                                        <td>{{sum.steam_unit}}</td>
+                                        <td>{{sum.steam_amount}}</td>
+                                        <td>{{sum.facebook_unit}}</td>
+                                        <td>{{sum.facebook_amount}}</td>
+                                        <td>{{sum.sony_unit}}</td>
+                                        <td>{{sum.sony_amount}}</td>
+                                        <td>{{sum.other_unit}}</td>
+                                        <td>{{sum.other_amount}}</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="13" class="text-center">
+                                            <div st-pagination="" st-items-by-page="30" st-displayed-pages="30"></div>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

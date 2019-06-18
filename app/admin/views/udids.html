@@ -1,0 +1,118 @@
+<loading visible="loading"></loading>
+<div id="content">
+    <div class="text-right margin-bottom-10">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="addRow()">Add New</button>
+    </div>
+    <section widget-grid id="widget-grid">
+        <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken"
+                     data-widget-editbutton="false" data-widget-deletebutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>UDID Management</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding">
+                            <div class="table-responsive">
+                                <table st-table="tableData" st-safe-src="safeData" st-select-mode="multiple"
+                                       class="table table-bordered">
+                                    <thead>
+                                    <tr style="text-align: center;">
+                                        <th rowspan="2">No</th>
+                                        <th st-sort="udid">UDID</th>
+                                        <th st-sort="type">Type</th>
+                                        <th st-sort="allocated_user">Allocated User</th>
+                                        <th st-sort="allocated_date">Allocated Date</th>
+                                        <th st-sort="created">Created Time</th>
+                                        <th rowspan="2">Action</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="padding-5">
+                                            <input class="form-control" st-search="udid"/>
+                                        </th>
+                                        <th class="padding-5">
+                                            <select class="form-control" st-search="type">
+                                                <option value="" selected>All</option>
+                                                <option ng-repeat="item in UdidTypes" value="{{item.key}}">{{item.value}}</option>
+                                            </select>
+                                        </th>
+                                        <th class="padding-5">
+                                            <input class="form-control" st-search="allocated_user"/>
+                                        </th>
+                                        <th class="padding-5">
+                                            <input class="form-control" st-search="allocated_date"/>
+                                        </th>
+                                        <th class="padding-5">
+                                            <input class="form-control" st-search="created"/>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr st-select-row="row" st-select-mode="single" ng-repeat="row in tableData"
+                                        ng-dblclick="editRow(row)">
+                                        <td>{{$index + 1}}</td>
+                                        <td>{{row.udid}}</td>
+                                        <td>{{getTypeTitle(row.type)}}</td>
+                                        <td>{{row.allocated_user}}</td>
+                                        <td>{{row.allocated_date}}</td>
+                                        <td>{{row.created}}</td>
+                                        <td class="text-center controls-td">
+                                            <a ng-click="editRow(row)">Edit</a> /
+                                            <a ng-click="deleteRow(row.id,$index)">Delete</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="7" class="text-center">
+                                            <div st-pagination="" st-items-by-page="10" st-displayed-pages="10"></div>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Edit Information</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-md-3 control-label">UDID</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" placeholder="UDID" ng-model="currRow.udid" rows="5"></textarea>
+                                <span ng-hide="currRow.id">You can add multiple udid with comma separated string or multiline string<br/><br/></span>
+                            </div>
+                        </div>
+                        <div class="row margin-top-10">
+                            <label class="col-md-3 control-label">Type</label>
+                            <div class="col-md-9">
+                                <select class="form-control" ng-model="currRow.type">
+                                    <option ng-repeat="item in UdidTypes" value="{{item.key}}">{{item.value}}</option>                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="save()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

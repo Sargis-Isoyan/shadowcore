@@ -1,0 +1,28 @@
+<div class="newsletter-section" ng-controller="newLetterController">
+    <h2 class="sub-title padding-top-20">N E W S L E T T E R</h2>
+    <h5 class="text-condensed-light newsletter-content">Step into the cyberpunk world of tomorrow with regular updates
+        from us.</h5>
+    <div class="newsletter-input-wrapper">
+        <form name="dataform" class="dataform">
+            <div ng-if="!isadded">
+                <input type="email"
+                       placeholder="Your e-mail here"
+                       ng-model="subscriber.email"
+                       required=""
+                       name="email"
+                       class="text-condensed-light email-box"
+                       ng-class="{'has-error': dataform.email.$error.email}">
+                <p class="margin-top-5" ng-if="!dataform.email.$error.email">&nbsp;</p>
+                <p class="margin-top-5" ng-if="dataform.email.$error.email">The email format is invalid.</p>
+            </div>
+            <div ng-if="isadded" class="newsletter-added-success">
+                <h4>THANK YOU <br/> YOUR SUBSCRIPTION HAS BEEN SUCCESSFULLY ADDED</h4>
+            </div>
+        </form>
+        <div class="newsletter-btn-wrapper" ng-if="!isadded">
+            <button class="btn btn-primary btn-white-border" ng-click="onSubscriber()" ng-disabled="saving"><span
+                    ng-if="saving"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>  </span>Submit
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<loading visible="loading"></loading>
+<div class="container-fluid padding-top-20">
+    <section widget-grid id="widget-grid">
+        <div class="row">
+            <article class="col-sm-12">
+                <div jarvis-widget id="standard-datatable-widget" data-widget-color="darken" data-widget-editbutton="false" data-widget-deletebutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-lock"></i> </span>
+                        <h2>External Links</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body no-padding">
+                            <div class="container-fluid">
+                                <!-- content -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3 padding-bottom-20">
+                                        <div class="well well-glass padding-0">
+                                            <form class="smart-form">
+                                                <fieldset>
+                                                    <section>
+                                                        <label class="label">Facebook URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="facebookUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section>
+                                                        <label class="label">Twitter URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="twitterUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section>
+                                                        <label class="label">Youtube URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="youtubeUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section>
+                                                        <label class="label">Reddit URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="redditUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section>
+                                                        <label class="label">Discord URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="discordUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section>
+                                                        <label class="label">Pinterest URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="pinterestUrl">
+                                                        </label>
+                                                    </section>
+
+                                                    <section ng-repeat="item in UdidTypes">
+                                                        <label class="label">Buy On {{item.value}} URL</label>
+                                                        <label class="input">
+                                                            <input type="url" ng-model="buyUrls[item.key]">
+                                                        </label>
+                                                    </section>                                                  
+
+                                                </fieldset>
+
+                                                <fieldset>
+                                                    <section class="text-center">
+                                                        <button class="btn btn-primary padding-5" ng-click="save()">Save</button>
+                                                    </section>
+                                                </fieldset>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

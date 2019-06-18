@@ -1,0 +1,8 @@
+[09-Feb-2017 19:09:39 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysqli_result::last_query() in /home/xuderatech/public_html/drgapp.com/server/application/models/Restaurant_model.php on line 26
+[14-Nov-2017 05:41:05 America/Los_Angeles] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/serebrum/public_html/shadowcore/api/system/libraries/Encrypt.php on line 323
+[19-Nov-2017 21:22:14 America/Denver] PHP Notice:  Undefined index: CKEditorFuncNum in /home2/serebrum/public_html/shadowcore/api/upload.php on line 10
+[19-Nov-2017 21:22:14 America/Denver] PHP Notice:  Undefined index: upload in /home2/serebrum/public_html/shadowcore/api/upload.php on line 13
+[19-Nov-2017 21:22:17 America/Denver] PHP Notice:  Undefined index: CKEditorFuncNum in /home2/serebrum/public_html/shadowcore/api/upload.php on line 10
+[19-Nov-2017 21:22:17 America/Denver] PHP Notice:  Undefined index: upload in /home2/serebrum/public_html/shadowcore/api/upload.php on line 13
+[19-Nov-2017 21:22:19 America/Denver] PHP Notice:  Undefined index: CKEditorFuncNum in /home2/serebrum/public_html/shadowcore/api/upload.php on line 10
+[19-Nov-2017 21:22:19 America/Denver] PHP Notice:  Undefined index: upload in /home2/serebrum/public_html/shadowcore/api/upload.php on line 13
